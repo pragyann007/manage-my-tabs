@@ -91,3 +91,17 @@ button#saveSessions {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.delete-btn {
+    background: transparent;
+    border: 1px solid red;
+    color: red;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: red;
+    color: white;
+}

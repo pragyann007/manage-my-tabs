@@ -93,22 +93,29 @@ function displaySessions() {
             div.innerHTML = `
                 <h3>${session.name}</h3>
                 <small>${session.tabs.length} tabs</small>
-                <button class="restore-btn">
-                    Restore
-                </button>
+
+                <div style="margin-top:8px; display:flex; gap:6px;">
+                    <button class="restore-btn">Restore</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
             `;
 
-            // attach handler properly
+            // Restore
             div.querySelector(".restore-btn")
-               .addEventListener("click", () => {
-                   restoreSession(session.id);
-               });
+                .addEventListener("click", () => {
+                    restoreSession(session.id);
+                });
+
+            // Delete
+            div.querySelector(".delete-btn")
+                .addEventListener("click", () => {
+                    deleteSession(session.id);
+                });
 
             sessionsContainer.appendChild(div);
         });
     });
 }
-
 
 
 async function restoreSession(id) {
@@ -122,6 +129,22 @@ async function restoreSession(id) {
 
         session.tabs.forEach(tab => {
             chrome.tabs.create({ url: tab.url });
+        });
+    });
+}
+
+
+function deleteSession(id) {
+
+    chrome.storage.local.get(["sessions"], (result) => {
+
+        let sessions = result.sessions || [];
+
+        // remove session
+        sessions = sessions.filter(session => session.id !== id);
+
+        chrome.storage.local.set({ sessions }, () => {
+            displaySessions(); // refresh UI
         });
     });
 }
