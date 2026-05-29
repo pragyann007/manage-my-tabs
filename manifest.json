@@ -12,6 +12,12 @@
     "action": {
       "default_popup": "popup/popup.html"
     },
+    "icons":{
+   
+      "48": "a.png"
+     
+
+    },
   
     "background": {
       "service_worker": "background/background.js"
