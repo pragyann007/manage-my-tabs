@@ -1,0 +1,93 @@
+body {
+    background: #0f0f0f;
+    color: white;
+    font-family: Arial, sans-serif;
+    width: 320px;
+    padding: 10px;
+}
+
+/* Tabs */
+.switch-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 8px;
+    background: transparent;
+    border: 1px solid #333;
+    color: #aaa;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.tab-btn.active {
+    background: #1f1f1f;
+    color: yellowgreen;
+    border-color: yellowgreen;
+}
+
+/* Sections */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Title */
+.title {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Input */
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #111;
+    color: white;
+}
+
+/* Button */
+button#saveSessions {
+    padding: 8px;
+    background: yellowgreen;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Sessions */
+.session-card {
+    background: #1a1a1a;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.session-card h3 {
+    margin: 0;
+    font-size: 13px;
+}
+
+.session-card button {
+    margin-top: 8px;
+    background: transparent;
+    border: 1px solid yellowgreen;
+    color: yellowgreen;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}

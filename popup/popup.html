@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Manager</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+
+<!-- Top Switch Tabs -->
+<div class="switch-tabs">
+    <button class="tab-btn active" data-tab="create">Create Session</button>
+    <button class="tab-btn" data-tab="vault">Session Vault</button>
+</div>
+
+<!-- CREATE SECTION -->
+<div class="tab-content active" id="create">
+
+    <h1 class="title">Manage My Tabs</h1>
+
+    <div class="inputs">
+        <input type="text" id="sessionName" placeholder="Enter session name" />
+        <button id="saveSessions">Save Session</button>
+    </div>
+
+</div>
+
+<!-- VAULT SECTION -->
+<div class="tab-content" id="vault">
+
+    <h2 class="title">Saved Sessions</h2>
+
+    <div id="sessions"></div>
+
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
